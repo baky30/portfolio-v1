@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -6,21 +10,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer components {
+  .heroButton {
+    @apply uppercase text-xs tracking-widest border px-4 py-3 rounded-full shadow-neon-blue bg-blue border-blue hover:shadow-neon-yellow hover:text-cream hover:border-cream
   }
-  body {
-    color: white;
-    background: black;
+
+  .sectionTitle {
+    @apply absolute top-16 uppercase tracking-[20px] text-2xl text-orange
   }
 }
