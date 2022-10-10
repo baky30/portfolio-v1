@@ -13,6 +13,7 @@ import { Experience, Project, Skill } from '../helpers/types'
 import { fetchExperience } from '../utils/fetchExperience'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
+import absoluteUrl from 'next-absolute-url'
 
 type Props = {
   experience: Experience[]
@@ -67,11 +68,14 @@ const Home: NextPage<Props> = ({ experience, skills, projects }) => {
 }
 
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   // Fetch data from external API
-  const experience: Experience[] = await fetchExperience();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
+  const { protocol, host } = absoluteUrl(context.req)
+  const apiURL = `${protocol}//${host}`
+
+  const experience: Experience[] = await fetchExperience(apiURL);
+  const skills: Skill[] = await fetchSkills(apiURL);
+  const projects: Project[] = await fetchProjects(apiURL);
 
   return { props: { experience, skills, projects } }
 }
