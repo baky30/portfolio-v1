@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({ experience, skills, projects }) => {
     <div className='bg-navy text-white h-screen snap-y snap-mandatory
       overflow-y-scroll z-0 scrollbar scrollbar-track-blue/40 scrollbar-thumb-orange'>
       <Head>
-        <title>Aman's portfolio</title>
+        <title>Aman&apos;s portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
