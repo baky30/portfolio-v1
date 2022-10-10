@@ -43,6 +43,7 @@ export const Projects = ({ projects }: Props) => {
                                             src={`/${t}.png`}
                                             layout='fill'
                                             objectFit='contain'
+                                            alt={t}
                                         />
                                     </div>
                                 )
