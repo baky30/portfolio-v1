@@ -32,12 +32,13 @@ export const Projects = ({ projects }: Props) => {
                                 src={'/projects.png'}
                                 layout='fill'
                                 objectFit='contain'
+                                alt={'projects'}
                             />
                         </motion.div>
 
                         <div className='flex gap-3'>
                             {p.technologies.map(t => (
-                                    <div className='relative w-10 h-10'>
+                                    <div key={t} className='relative w-10 h-10'>
                                         <Image
                                             src={`/${t}.png`}
                                             layout='fill'
