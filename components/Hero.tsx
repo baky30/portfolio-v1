@@ -6,7 +6,7 @@ import { BackgroundCircles } from './BackgroundCircles';
 
 export const Hero = () => {
     const [text] = useTypewriter({
-        words: ['Some good text', 'Lorem ipsum'],
+        words: ['Coding is my warmup', 'Debugging is my cardio'],
         loop: true,
     })
 
